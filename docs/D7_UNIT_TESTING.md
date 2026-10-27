@@ -59,7 +59,7 @@ Berdasarkan log GitHub Actions, seluruh 10 test cases berhasil dijalankan.
 
 Klik tautan berikut untuk melihat screenshot hasil pengujian:
 
-[Lihat Screenshot Hasil Unit Testing]( https://github.com/011-DenisAthaullah/menferse/blob/main/screenshots/D7_UNIT_TESTS.png?raw=true )
+![Bukti Unit Test Menferse](https://github.com/011-DenisAtaullah/menferse/blob/main/screenshots/D7_UNIT_TESTS.png?raw=true)
 
 ## 7. Kesimpulan
 
