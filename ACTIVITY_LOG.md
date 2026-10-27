@@ -19,10 +19,11 @@
 
 Setiap anggota wajib mencatat aktivitas yang benar-benar dikerjakan menggunakan akun GitHub masing-masing. Setiap aktivitas harus dilengkapi dengan tautan commit atau Pull Request (PR) sebagai bukti pekerjaan.
 
+# Log Aktivitas
+
 | Tanggal | Nama Anggota | Aktivitas | Hasil | Durasi | Bukti Commit/PR |
-|---|---|---|---|---|
-
-
+|---|---|---|---|---|---|
+| 27 Okt 2026 | Denis (@011-DenisAthaullah) | D5 - Setup repository dan struktur folder | Repo, README, dan log aktivitas awal tersedia di branch main | 20 menit | d8eb83b |
 
 ## Aturan Pencatatan
 
