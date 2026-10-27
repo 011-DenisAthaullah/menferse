@@ -1,51 +1,61 @@
-# D3 — Use Case Diagram Menferse
+# D3: Use Case Diagram Menferse
 
-## 1. Tujuan
+## 1. Deskripsi Sistem
 
-Use Case Diagram Menferse menggambarkan interaksi antara mahasiswa, administrator, dan sistem Menferse. Sistem ini menyediakan fitur untuk melihat menfess publik, mengirim menfess, melakukan moderasi menfess, melihat katalog bunga, memesan bunga, serta memeriksa status pesanan.
+Menferse merupakan aplikasi berbasis web yang menyediakan layanan menfess kampus dan pemesanan bunga. Mahasiswa dapat mengirim menfess secara anonim maupun menggunakan identitas, melihat menfess yang telah dipublikasikan, serta memesan bunga untuk penerima di lingkungan kampus. Administrator bertanggung jawab memoderasi menfess sebelum ditampilkan kepada publik.
 
-## 2. Identifikasi Aktor
+## 2. Aktor Sistem
 
-| Aktor | Deskripsi |
-|---|---|
-| Mahasiswa | Pengguna yang dapat melihat menfess publik, masuk ke akun, mengirim menfess, melihat katalog bunga, memesan bunga, dan memeriksa status pesanan. |
-| Administrator | Pengelola sistem yang memeriksa menfess serta menyetujui atau menolaknya sebelum dipublikasikan. |
+### 2.1 Mahasiswa
+
+Mahasiswa merupakan pengguna utama sistem yang dapat melihat menfess publik, masuk ke akun, mengirim menfess, melihat katalog bunga, memesan bunga, dan melihat status pesanan.
+
+### 2.2 Administrator
+
+Administrator bertanggung jawab mengelola proses moderasi menfess, termasuk memeriksa menfess, menyetujui menfess, dan menolak menfess yang tidak sesuai.
 
 ## 3. Daftar Use Case
 
-| ID | Nama Use Case | Aktor | Deskripsi |
+| No. | Use Case | Aktor | Deskripsi |
 |---|---|---|---|
-| UC-01 | Melihat Menfess Publik | Mahasiswa | Melihat menfess yang telah disetujui dan dipublikasikan. |
-| UC-02 | Masuk ke Akun | Mahasiswa | Melakukan autentikasi untuk mengakses fitur yang memerlukan akun. |
-| UC-03 | Mengirim Menfess | Mahasiswa | Mengirim pesan menfess untuk ditinjau administrator. |
-| UC-04 | Memilih Identitas Pengirim | Mahasiswa | Memilih apakah nama ditampilkan atau pengiriman dilakukan secara anonim. |
-| UC-05 | Memoderasi Menfess | Administrator | Memeriksa menfess yang menunggu peninjauan. |
-| UC-06 | Menyetujui Menfess | Administrator | Menyetujui menfess agar dapat ditampilkan secara publik. |
-| UC-07 | Menolak Menfess | Administrator | Menolak menfess yang tidak layak dipublikasikan. |
-| UC-08 | Melihat Katalog Bunga | Mahasiswa | Melihat pilihan bunga yang tersedia. |
-| UC-09 | Memesan Bunga | Mahasiswa | Memilih bunga dan membuat pesanan untuk penerima di lingkungan kampus. |
-| UC-10 | Mengisi Data Penerima | Mahasiswa | Mengisi nama penerima, program studi, angkatan, dan gedung kampus untuk keperluan pengantaran. |
-| UC-11 | Melihat Status Pesanan | Mahasiswa | Memeriksa perkembangan status pesanan bunga. |
+| 1 | Melihat Menfess Publik | Mahasiswa | Melihat menfess yang telah dipublikasikan. |
+| 2 | Masuk ke Akun | Mahasiswa | Melakukan autentikasi untuk mengakses fitur yang memerlukan login. |
+| 3 | Mengirim Menfess | Mahasiswa | Mengirim pesan menfess melalui aplikasi. |
+| 4 | Memilih Identitas Pengirim | Mahasiswa | Memilih untuk menampilkan identitas atau mengirim secara anonim. |
+| 5 | Memoderasi Menfess | Administrator | Memeriksa menfess yang menunggu moderasi. |
+| 6 | Menyetujui Menfess | Administrator | Menyetujui menfess agar dapat dipublikasikan. |
+| 7 | Menolak Menfess | Administrator | Menolak menfess agar tidak dipublikasikan. |
+| 8 | Melihat Katalog Bunga | Mahasiswa | Melihat pilihan bunga yang tersedia. |
+| 9 | Memesan Bunga | Mahasiswa | Membuat pesanan bunga melalui aplikasi. |
+| 10 | Mengisi Data Penerima | Mahasiswa | Mengisi nama penerima, program studi, angkatan, dan gedung kampus. |
+| 11 | Melihat Status Pesanan | Mahasiswa | Melihat status pesanan bunga yang telah dibuat. |
 
 ## 4. Relasi Antar-Use Case
 
-- `<<include>>` Mengirim Menfess — Memilih Identitas Pengirim: mahasiswa menentukan apakah identitasnya ditampilkan atau disembunyikan saat mengirim menfess.
-- `<<include>>` Memesan Bunga — Mengisi Data Penerima: data penerima diperlukan untuk memproses pengantaran bunga.
-- `<<extend>>` Menyetujui Menfess — Memoderasi Menfess: persetujuan merupakan salah satu kemungkinan hasil moderasi.
-- `<<extend>>` Menolak Menfess — Memoderasi Menfess: penolakan merupakan kemungkinan hasil lainnya.
+### 4.1 Relasi `<<include>>`
 
-Persetujuan dan penolakan merupakan dua kemungkinan hasil yang berbeda, bukan tindakan yang harus dilakukan sekaligus.
+Relasi `<<include>>` menunjukkan bahwa suatu use case selalu melibatkan perilaku dari use case lainnya.
 
-## 5. Gambar Use Case Diagram
+- **Mengirim Menfess** mencakup **Memilih Identitas Pengirim**.
+- **Memesan Bunga** mencakup **Mengisi Data Penerima**.
 
-Diagram Use Case Menferse dapat dilihat pada gambar berikut.
+### 4.2 Relasi `<<extend>>`
 
-![Use Case Diagram Menferse](img/D3_USE_CASE_DIAGRAM.png)
+Relasi `<<extend>>` menunjukkan perilaku tambahan yang terjadi dalam kondisi tertentu.
 
-**Lokasi gambar:** `diagrams/img/D3_USE_CASE_DIAGRAM.png`
+- **Menyetujui Menfess** memperluas proses **Memoderasi Menfess**.
+- **Menolak Menfess** memperluas proses **Memoderasi Menfess**.
+
+## 5. Use Case Diagram
+
+Diagram berikut menggambarkan hubungan antara aktor, fitur, dan sistem Menferse.
+
+![Use Case Diagram Menferse](../diagrams/img/D3_USE_CASE_DIAGRAM.png)
+
+**Lokasi file PNG:** `diagrams/img/D3_USE_CASE_DIAGRAM.png`
 
 **Lokasi source PlantUML:** `diagrams/D3_USE_CASE_DIAGRAM.puml`
 
 ## 6. Kesimpulan
 
-Use Case Diagram Menferse memuat dua aktor dan sebelas use case yang menggambarkan fitur utama sistem. Diagram ini menjadi gambaran interaksi pengguna dengan sistem sebelum proses pengembangan dilakukan.
+Use Case Diagram Menferse menggambarkan interaksi antara mahasiswa dan administrator dengan fitur-fitur utama sistem. Diagram ini menjadi dasar untuk memahami kebutuhan fungsional aplikasi sebelum proses perancangan dan pengembangan lebih lanjut.
