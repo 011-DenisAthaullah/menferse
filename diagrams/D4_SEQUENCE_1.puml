@@ -1,0 +1,38 @@
+@startuml
+title D4 - Sequence Diagram 1: Mengirim Menfess
+
+autonumber
+skinparam shadowing false
+
+actor Mahasiswa
+boundary "UI Menferse" as UI
+control "Modul Autentikasi" as Auth
+control "Modul Pengelolaan Menfess" as Menfess
+database "Database" as DB
+
+Mahasiswa -> UI: Membuka halaman pengiriman menfess
+UI --> Mahasiswa: Menampilkan formulir menfess
+
+Mahasiswa -> UI: Mengisi pesan dan identitas pengirim
+Mahasiswa -> UI: Menekan tombol Kirim
+UI -> Auth: Memeriksa status login
+Auth --> UI: Mengembalikan status autentikasi
+
+alt Mahasiswa belum login
+    UI --> Mahasiswa: Menampilkan pesan harus login
+else Mahasiswa sudah login
+    UI -> Menfess: Mengirim data menfess
+    Menfess -> Menfess: Memvalidasi data
+
+    alt Data tidak valid
+        Menfess --> UI: Mengembalikan kesalahan validasi
+        UI --> Mahasiswa: Menampilkan pesan kesalahan
+    else Data valid
+        Menfess -> DB: Menyimpan menfess dengan status menunggu moderasi
+        DB --> Menfess: Konfirmasi penyimpanan
+        Menfess --> UI: Pengiriman berhasil
+        UI --> Mahasiswa: Menampilkan konfirmasi pengiriman
+    end
+end
+
+@enduml
