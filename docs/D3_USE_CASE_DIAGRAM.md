@@ -42,7 +42,7 @@ Diagram Use Case Menferse dapat dilihat pada gambar berikut.
 
 ![Use Case Diagram Menferse](img/D3_USE_CASE_DIAGRAM.png)
 
-**Lokasi gambar:** `docs/img/D3_USE_CASE_DIAGRAM.png`
+**Lokasi gambar:** `diagrams/img/D3_USE_CASE_DIAGRAM.png`
 
 **Lokasi source PlantUML:** `diagrams/D3_USE_CASE_DIAGRAM.puml`
 
