@@ -49,17 +49,13 @@ python -m pytest -v
 
 Pengujian juga dijalankan secara otomatis menggunakan GitHub Actions ketika terdapat push atau pull request.
 
-## 6. Hasil Pengujian
+## 6. Bukti Hasil Pengujian
 
-Berdasarkan log GitHub Actions, seluruh 10 test cases berhasil dijalankan.
+Seluruh 10 test cases berhasil dijalankan melalui GitHub Actions.
 
-**Hasil: 10 passed in 0.02s.**
+**Hasil pengujian: 10 passed in 0.02s.**
 
-### Bukti Hasil Pengujian
-
-Klik tautan berikut untuk melihat screenshot hasil pengujian:
-
-![Bukti Unit Test Menferse](https://github.com/011-DenisAtaullah/menferse/blob/main/screenshots/D7_UNIT_TESTS.png?raw=true)
+[Klik di sini untuk melihat screenshot hasil pengujian D7](../screenshots/D7_UNIT_TESTS.png)
 
 ## 7. Kesimpulan
 
