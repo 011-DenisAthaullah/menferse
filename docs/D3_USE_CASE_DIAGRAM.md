@@ -8,11 +8,11 @@ Menferse merupakan aplikasi berbasis web yang menyediakan layanan menfess kampus
 
 ### 2.1 Mahasiswa
 
-Mahasiswa merupakan pengguna utama sistem yang dapat melihat menfess publik, masuk ke akun, mengirim menfess, melihat katalog bunga, memesan bunga, dan melihat status pesanan.
+Mahasiswa merupakan pengguna utama yang dapat melihat menfess publik, masuk ke akun, mengirim menfess, melihat katalog bunga, memesan bunga, dan melihat status pesanan.
 
 ### 2.2 Administrator
 
-Administrator bertanggung jawab mengelola proses moderasi menfess, termasuk memeriksa menfess, menyetujui menfess, dan menolak menfess yang tidak sesuai.
+Administrator bertanggung jawab memeriksa menfess yang menunggu moderasi, menyetujui menfess, atau menolak menfess yang tidak sesuai.
 
 ## 3. Daftar Use Case
 
@@ -34,21 +34,21 @@ Administrator bertanggung jawab mengelola proses moderasi menfess, termasuk meme
 
 ### 4.1 Relasi `<<include>>`
 
-Relasi `<<include>>` menunjukkan bahwa suatu use case selalu melibatkan perilaku dari use case lainnya.
+Relasi ini menunjukkan bahwa suatu use case selalu melibatkan perilaku dari use case lainnya.
 
 - **Mengirim Menfess** mencakup **Memilih Identitas Pengirim**.
 - **Memesan Bunga** mencakup **Mengisi Data Penerima**.
 
 ### 4.2 Relasi `<<extend>>`
 
-Relasi `<<extend>>` menunjukkan perilaku tambahan yang terjadi dalam kondisi tertentu.
+Relasi ini menunjukkan perilaku tambahan yang terjadi dalam kondisi tertentu.
 
 - **Menyetujui Menfess** memperluas proses **Memoderasi Menfess**.
 - **Menolak Menfess** memperluas proses **Memoderasi Menfess**.
 
 ## 5. Use Case Diagram
 
-Diagram berikut menggambarkan hubungan antara aktor, fitur, dan sistem Menferse.
+Diagram berikut menggambarkan interaksi mahasiswa dan administrator dengan fitur-fitur utama sistem Menferse.
 
 ![Use Case Diagram Menferse](../diagrams/img/D3_USE_CASE_DIAGRAM.png)
 
@@ -56,6 +56,8 @@ Diagram berikut menggambarkan hubungan antara aktor, fitur, dan sistem Menferse.
 
 **Lokasi source PlantUML:** `diagrams/D3_USE_CASE_DIAGRAM.puml`
 
+[**Lihat Source Code PlantUML D3**](../diagrams/D3_USE_CASE_DIAGRAM.puml)
+
 ## 6. Kesimpulan
 
-Use Case Diagram Menferse menggambarkan interaksi antara mahasiswa dan administrator dengan fitur-fitur utama sistem. Diagram ini menjadi dasar untuk memahami kebutuhan fungsional aplikasi sebelum proses perancangan dan pengembangan lebih lanjut.
+Use Case Diagram Menferse menggambarkan hubungan antara aktor dan fitur utama sistem. Diagram ini menjadi dasar untuk memahami kebutuhan fungsional aplikasi sebelum proses perancangan dan pengembangan lebih lanjut.
