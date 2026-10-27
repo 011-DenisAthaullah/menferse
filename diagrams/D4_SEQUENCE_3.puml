@@ -1,0 +1,49 @@
+@startuml
+title D4 - Sequence Diagram 3: Memesan Bunga
+
+autonumber
+skinparam shadowing false
+
+actor Mahasiswa
+boundary "UI Menferse" as UI
+control "Modul Autentikasi" as Auth
+control "Modul Katalog dan Pemesanan Bunga" as Bunga
+database "Database" as DB
+
+Mahasiswa -> UI: Membuka katalog bunga
+UI -> Bunga: Meminta daftar bunga
+Bunga -> DB: Mengambil data bunga tersedia
+DB --> Bunga: Mengembalikan daftar bunga
+Bunga --> UI: Mengirim daftar bunga
+UI --> Mahasiswa: Menampilkan katalog bunga
+
+Mahasiswa -> UI: Memilih bunga
+UI --> Mahasiswa: Menampilkan formulir pemesanan
+Mahasiswa -> UI: Mengisi data penerima dan mengirim pesanan
+
+UI -> Auth: Memeriksa status login
+Auth --> UI: Mengembalikan status autentikasi
+
+alt Mahasiswa belum login
+    UI --> Mahasiswa: Meminta mahasiswa login
+else Mahasiswa sudah login
+    UI -> Bunga: Mengirim data pesanan
+    Bunga -> Bunga: Memvalidasi data penerima
+    Bunga -> DB: Memeriksa ketersediaan bunga
+    DB --> Bunga: Mengembalikan status ketersediaan
+
+    alt Data penerima tidak valid
+        Bunga --> UI: Mengembalikan kesalahan validasi
+        UI --> Mahasiswa: Menampilkan pesan kesalahan
+    else Bunga tidak tersedia
+        Bunga --> UI: Menginformasikan bunga tidak tersedia
+        UI --> Mahasiswa: Menampilkan informasi ketersediaan
+    else Data valid dan bunga tersedia
+        Bunga -> DB: Menyimpan pesanan bunga
+        DB --> Bunga: Konfirmasi penyimpanan pesanan
+        Bunga --> UI: Mengirim konfirmasi dan status pesanan
+        UI --> Mahasiswa: Menampilkan konfirmasi pesanan
+    end
+end
+
+@enduml
