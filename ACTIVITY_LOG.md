@@ -24,6 +24,7 @@ Setiap anggota wajib mencatat aktivitas yang benar-benar dikerjakan menggunakan 
 | Tanggal | Nama Anggota | Aktivitas | Hasil | Durasi | Bukti Commit/PR |
 |---|---|---|---|---|---|
 | 27 Okt 2026 | Denis (@011-DenisAthaullah) | D5 - Setup repository dan struktur folder | Repo, README, dan log aktivitas awal tersedia di branch main | 20 menit | d8eb83b |
+| 27 Okt 2026 | Denis (@011-DenisAthaullah) | D1 - Membuat Topik dan Pernyataan Masalah | Menyelesaikan D1 Topic & Problem Steatment | 20 menit | PR #1 |
 
 ## Aturan Pencatatan
 
