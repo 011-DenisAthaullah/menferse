@@ -8,8 +8,8 @@ Menferse adalah aplikasi web berbasis kampus yang memungkinkan mahasiswa menyamp
 | No. | Nama | NIM | Nama Pengguna GitHub |
 |---|---|---|---|
 | 1 | Denis Athaullah      | 26110300002 | 011-DenisAthaulah |
-| 2 | Dude Dzaky Fadilla   | 26110300024 | rausyan27         |
-| 3 | Rausyan Fikri Ananda | 26110300023 | dudedzfadilla02   |
+| 2 | Dude Dzaky Fadilla   | 26110300023 | dudedzfadilla02   |
+| 3 | Rausyan Fikri Ananda | 26110300024 | rausyan27         |
 
 ## 📌 Latar Belakang Masalah
 
