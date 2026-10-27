@@ -1,0 +1,49 @@
+@startuml
+title D4 - Sequence Diagram 2: Moderasi Menfess
+
+autonumber
+skinparam shadowing false
+
+actor Administrator as Admin
+boundary "UI Menferse" as UI
+control "Modul Autentikasi" as Auth
+control "Modul Moderasi Menfess" as Moderasi
+database "Database" as DB
+
+Admin -> UI: Membuka halaman moderasi
+UI -> Auth: Memeriksa hak akses administrator
+Auth --> UI: Mengembalikan hasil pemeriksaan
+
+alt Akses ditolak
+    UI --> Admin: Menampilkan pesan akses ditolak
+else Akses diizinkan
+    UI -> Moderasi: Meminta daftar menfess menunggu moderasi
+    Moderasi -> DB: Mengambil menfess berstatus menunggu moderasi
+    DB --> Moderasi: Mengembalikan daftar menfess
+    Moderasi --> UI: Mengirim daftar menfess
+    UI --> Admin: Menampilkan daftar menfess
+
+    Admin -> UI: Memilih menfess untuk diperiksa
+    UI -> Moderasi: Meminta detail menfess
+    Moderasi -> DB: Mengambil detail menfess
+    DB --> Moderasi: Mengembalikan detail menfess
+    Moderasi --> UI: Mengirim detail menfess
+    UI --> Admin: Menampilkan detail menfess
+
+    Admin -> UI: Memilih keputusan moderasi
+    UI -> Moderasi: Mengirim keputusan
+
+    alt Menfess disetujui
+        Moderasi -> DB: Mengubah status menjadi disetujui
+        DB --> Moderasi: Konfirmasi perubahan status
+        Moderasi --> UI: Moderasi berhasil
+        UI --> Admin: Menampilkan konfirmasi persetujuan
+    else Menfess ditolak
+        Moderasi -> DB: Mengubah status menjadi ditolak
+        DB --> Moderasi: Konfirmasi perubahan status
+        Moderasi --> UI: Moderasi berhasil
+        UI --> Admin: Menampilkan konfirmasi penolakan
+    end
+end
+
+@enduml
