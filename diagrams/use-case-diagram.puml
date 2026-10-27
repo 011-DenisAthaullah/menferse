@@ -1,0 +1,39 @@
+@startuml UseCase_Menferse
+title Use Case Diagram Menferse
+left to right direction
+skinparam packageStyle rectangle
+
+actor Mahasiswa
+actor Administrator
+
+rectangle "Sistem Menferse" {
+  usecase "Registrasi akun" as UC1
+  usecase "Masuk dan keluar" as UC2
+  usecase "Lihat menfess" as UC3
+  usecase "Kirim menfess" as UC4
+  usecase "Pilih anonim/nama" as UC5
+  usecase "Lihat katalog bunga" as UC6
+  usecase "Pesan bunga" as UC7
+  usecase "Isi data penerima" as UC8
+  usecase "Cek status pesanan" as UC9
+  usecase "Lihat daftar pesan" as UC10
+  usecase "Setujui menfess" as UC11
+  usecase "Tolak menfess" as UC12
+}
+
+Mahasiswa --> UC1
+Mahasiswa --> UC2
+Mahasiswa --> UC3
+Mahasiswa --> UC4
+Mahasiswa --> UC6
+Mahasiswa --> UC7
+Mahasiswa --> UC9
+
+Administrator --> UC2
+Administrator --> UC10
+Administrator --> UC11
+Administrator --> UC12
+
+UC4 .> UC5 : <<include>>
+UC7 .> UC8 : <<include>>
+@enduml
