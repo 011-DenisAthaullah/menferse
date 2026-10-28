@@ -77,13 +77,13 @@ Dokumen dan kode sumber proyek akan disimpan dalam struktur berikut.
 
 | Bagian | Lokasi Berkas |
 |---|---|
-| D1: Topik dan Rumusan Masalah | `docs/D1_PROBLEM_STATEMENT.md` |
+| D1: Topik dan Rumusan Masalah | `docs/D1_TOPIC_AND_PROBLEM_STATEMENT.md` |
 | D2: Pembagian Modul | `docs/D2_MODULE_BREAKDOWN.md` |
 | D3: Diagram Use Case | `docs/D3_USE_CASE_DIAGRAM.md` |
 | D4: Diagram Sequence | `docs/D4_SEQUENCE_DIAGRAMS.md` |
 | D5: Catatan Aktivitas Tim | `ACTIVITY_LOG.md` |
 | D6: Rancangan Kasus Uji | `docs/D6_TEST_CASES.md` |
-| D7: Kode dan Pengujian Unit | `src/validation.py` dan `tests/test_validation.py` |
+| D7: Kode dan Pengujian Unit | `src/menfess_validation.py` dan `tests/test_menfess_validation.py` |
 | Berkas Diagram | `diagrams/` |
 
 *Tautan ke setiap dokumen akan dilengkapi setelah berkas terkait dibuat dan disimpan di GitHub.*
@@ -103,8 +103,8 @@ Pastikan Python sudah terpasang di komputer.
 ### 1. Unduh repository
 
 ```bash
-git clone <URL_REPOSITORY>
-cd <NAMA_FOLDER_REPOSITORY>
+git clone https://github.com/011-DenisAthaullah/menferse
+cd menferse
 ```
 
 Ganti URL dan nama folder sesuai repository milik kelompokmu.
